@@ -40,3 +40,15 @@ jobs:
         with:
           name: HelloWorld-unsigned-ipa
           path: HelloWorld-unsigned.ipa
+
+  playground:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Swift Playgrounds app package
+        working-directory: HelloWorld.swiftpm
+        run: |
+          xcodebuild -list
+          xcodebuild -scheme HelloWorld \
+            -destination 'generic/platform=iOS Simulator' \
+            CODE_SIGNING_ALLOWED=NO build

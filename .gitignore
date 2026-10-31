@@ -8,3 +8,4 @@ xcuserdata/
 
 # Build outputs
 *.ipa
+*.swiftpm.zip
